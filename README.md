@@ -1,5 +1,3 @@
-Here is one way to refactor the README for improved readability:
-
 # Tiered Storage Simulator
 
 This repository simulates fetching data from a distributed storage system with hot, warm, and cold layers.
