@@ -260,16 +260,15 @@ def log_message(message: str):
 
 
 if __name__ == "__main__":
-    # To run as a standalone script, uncomment the following two lines:
-    # cid = "QmNn6URxrsvtMw3FwMXDY8RsuWgQq4zKkxrnA5QNpx2aWq"  # in S3
-    cid = "bafybeigoe4ss23hrahns7sbqus6tas4ovvnhupmrnrym5zluu2ssg5yj5u"
-    piece_cid = "baga6ea4seaqfnimohx7eefyfgc3m5hvhy4hmdukyvlhw4vwacwbdlvpfvod4wky"
-    # data = get_data(cid, piece_cid)
-    # if data:
-    #     print(f"Got data: {data}")
-    # else:
-    #     print("Unable to get data")
-
-    # To run in GUI mode, uncomment the following lines:
     IN_GUI_MODE = True
-    run_gui()
+    if IN_GUI_MODE:
+        run_gui()
+    else:
+        cid = "bafybeigoe4ss23hrahns7sbqus6tas4ovvnhupmrnrym5zluu2ssg5yj5u"
+        cid_2 = "QmNn6URxrsvtMw3FwMXDY8RsuWgQq4zKkxrnA5QNpx2aWq"  # in S3
+        piece_cid = "baga6ea4seaqfnimohx7eefyfgc3m5hvhy4hmdukyvlhw4vwacwbdlvpfvod4wky"
+        data = get_data(cid, piece_cid)
+        if data:
+            print(f"Got data: {data}")
+        else:
+            print("Unable to get data")

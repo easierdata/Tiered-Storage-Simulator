@@ -1,0 +1,9 @@
+scipy
+pandas
+flask
+boto3
+dotenv
+requests
+
+# Dev Requirements
+pytest
