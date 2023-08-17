@@ -1,21 +1,79 @@
-# Tiered-Storage-Simulator
+Here is one way to refactor the README for improved readability:
 
-This repository contains code to fetch data stored in a distributed storage system with hot, warm, and cold layers.
+# Tiered Storage Simulator
+
+This repository simulates fetching data from a distributed storage system with hot, warm, and cold layers.
 
 ## Installation
 
-```shell
+Clone the repository:
+
+```bash
 git clone git@github.com:easierdata/tiered-storage-simulator.git
+```
+
+Navigate into the project directory:
+
+```bash
 cd tiered-storage-simulator
-# Make sure you have installed Python 3 with Tkinter
-brew install python3-tk
+```
+
+Set up a virtual environment:
+
+```bash
 python3 -m venv venv
 source venv/bin/activate
-pip install -- upgrade pip && pip install -r requirements.txt
 ```
+
+Install dependencies:
+
+```bash
+pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+Here is one way to expand the Usage section with more details:
 
 ## Usage
 
-tieredStorageSimulation.py - This file contains the code to fetch data from various storage systems with hot, warm, and cold layers. It can be run either as a standalone file or as a Tinker GUI. In order to switch between the two, change the value of IN_GUI_MODE to True or False. Because our storage provider has not yet given us an HTTP web server, a flask web server is used to simulate the storage provider. The flask web server is run in a separate thread by running flask_web_server.py.
+### tieredStorageSimulation.py
 
-cacheHitSimulations.py - This file contains the code to run simulations for various cache hit rates. Depending on the number of scenes requested and the cache lifetime, the 'cold storage hit rate' is calculated. The results are stored in a csv file called results.csv.
+This script fetches data from a simulated distributed storage system with hot, warm, and cold layers.
+
+It can run in two modes:
+
+- Standalone - Runs the simulation logic without a GUI
+- Tinker GUI - Renders an interactive GUI for visualizing the simulation
+
+To switch between modes, set the `IN_GUI_MODE` variable to `True` or `False`.
+
+The cold storage system is simulated using a Flask web server defined in `flask_web_server.py`. This runs in a separate thread to mimic requests to the storage provider API.
+
+### cacheHitSimulations.py
+
+This script runs simulations to analyze cache hit rates under different configurations.
+
+It varies:
+
+- Number of scenes requested per request
+- Cache expiration time
+
+For each combination, it simulates cache requests and counts the number of "cold storage hits". This represents when a request cannot be served from cache and must fetch from cold storage.
+
+The hit rate is calculated as:
+
+```
+cold_storage_hits / number_of_requests
+```
+
+Results are saved to `results.csv` including:
+
+- Number of requests
+- Cache expiration
+- Scenes per request
+- Cold storage hits
+- Hit rate
+
+Rows are sorted by highest to lowest hit rate.
+
+This allows analyzing which factors increase the cache hit rate and reduce trips to slow cold storage.
