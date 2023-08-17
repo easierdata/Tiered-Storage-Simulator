@@ -32,8 +32,6 @@ pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-Here is one way to expand the Usage section with more details:
-
 ## Usage
 
 ### tieredStorageSimulation.py
