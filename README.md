@@ -18,8 +18,11 @@ cd tiered-storage-simulator
 
 Set up a virtual environment:
 
-```bash
-python3 -m venv venv
+```shell
+cd tiered-storage-simulator
+# Install the tkinter version of python3 with brew
+brew install python-tk@3.11
+python3 -m venv .venv
 source venv/bin/activate
 ```
 
@@ -44,6 +47,8 @@ It can run in two modes:
 To switch between modes, set the `IN_GUI_MODE` variable to `True` or `False`.
 
 The cold storage system is simulated using a Flask web server defined in `flask_web_server.py`. This runs in a separate thread to mimic requests to the storage provider API.
+
+In order to use the S3 integration, rename `sample.env` to `.env` and fill in the environment variables with your AWS credentials.
 
 ### cacheHitSimulations.py
 

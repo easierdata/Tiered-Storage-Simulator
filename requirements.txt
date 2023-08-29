@@ -2,7 +2,7 @@ scipy
 pandas
 flask
 boto3
-dotenv
+python-dotenv
 requests
 
 # Dev Requirements
