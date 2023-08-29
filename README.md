@@ -2,6 +2,9 @@
 
 This repository simulates fetching data from a distributed storage system with hot, warm, and cold layers.
 
+![image](https://github.com/easierdata/tiered-storage-simulator/assets/9572232/6914b60f-4ae3-46c2-927e-7bd054e23331)
+
+
 ## Installation
 
 Clone the repository:
